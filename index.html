@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Picker</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #color-picker {
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgb(149, 109, 179);
+    }
+
+    #color-picker .colors {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: pink;
+    }
+
+    #color-picker .colors div {
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      border-radius: 5px;
+      margin: 5px;
+      background-color: pink;
+    }
+
+    #color-picker .colors div.active {
+      background-color: #ccc;
+    }
+
+    div#color-picker{
+      width: 96.9%;
+      height: 565px;
+    }
+
+    div.colors{
+      width: 1200px;
+      height: 450px;
+      margin-left: 20px;
+      border-radius: 30px;
+      box-shadow: black;
+    }
+
+    div.box{
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="color-picker">
+    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Color Picker</h2>
+    <div class="colors">
+      <div class="box" data-color="red" style="background-color: red;"></div>
+      <div class="box" data-color="green" style="background-color: green;"></div>
+      <div class="box" data-color="blue" style="background-color: blue;"></div>
+      <div class="box" data-color="yellow" style="background-color: yellow;"></div>
+      <div class="box" data-color="orange" style="background-color: orange;"></div>
+      <div class="box" data-color="purple" style="background-color: purple;"></div>
+      <div class="box" data-color="pink" style="background-color: pink;"></div>
+      <div class="box" data-color="black" style="background-color: black;"></div>
+      <div class="box" data-color="white" style="background-color: white;"></div>
+      <div class="box" data-color="gray" style="background-color: gray;"></div>
+      <!--<button class="but">Pick a Color</button>-->
+    </div>
+    
+  </div>
+  <script>
+    const colorPicker = document.getElementById('color-picker');
+    const colorsDiv = document.querySelector('.colors');
+
+    colorPicker.addEventListener('click', (event) => {
+      const color = event.target.getAttribute('data-color');
+
+      // Set the background color of the colors div to the selected color
+      colorsDiv.style.backgroundColor = color;
+    });
+  </script>
+</body>
+</html>
